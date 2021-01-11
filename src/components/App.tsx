@@ -11,7 +11,7 @@ export class App extends React.Component<{}, IState> {
   }
 
   deleteTask(taskId: number): void {
-    const filteredTasks: Array<ITask> = this.state.tasks.filter(
+    const filteredTasks: ITask[] = this.state.tasks.filter(
       (task) => task.id !== taskId
     );
     this.setState({
@@ -48,7 +48,7 @@ export class App extends React.Component<{}, IState> {
   }
 
   public render(): JSX.Element {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <React.Fragment>
         <h1>React Typescript Todo List</h1>
@@ -73,7 +73,7 @@ export class App extends React.Component<{}, IState> {
 
 interface IState {
   currentTask: string;
-  tasks: Array<ITask>;
+  tasks: ITask[];
 }
 
 interface ITask {
