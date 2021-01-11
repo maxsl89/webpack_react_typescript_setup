@@ -1,15 +1,13 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 
 import { App } from './../components/App';
 
 test('renders the correct content', () => {
   // Render a react component to the DOM
-  const root = document.createElement('div');
-  ReactDOM.render(<App />, root);
+  const { getByText, getByLabelText } = render(<App />);
 
-  // Use DOM APIs (querySelector) to make assertions
-  expect(root.querySelector('h1').textContent).toBe(
-    'React Typescript Todo List'
-  );
+  getByText('React Typescript Todo List');
+  getByLabelText('What needs to be done?');
+  getByText('Add Task');
 });

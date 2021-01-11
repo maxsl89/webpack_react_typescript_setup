@@ -53,7 +53,10 @@ export class App extends React.Component<{}, IState> {
       <React.Fragment>
         <h1>React Typescript Todo List</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
+          <label htmlFor="new-todo">What needs to be done?</label>
+          <br />
           <input
+            id="new-todo"
             type="text"
             value={this.state.currentTask}
             placeholder="Add a task"
